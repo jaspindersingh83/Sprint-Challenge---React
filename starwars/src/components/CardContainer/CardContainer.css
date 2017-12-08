@@ -25,7 +25,17 @@
 }
 .Cardcontainer__bodyitem{
     width: 100%;
+    display: flex;
+    flex-direction: row;
     height: 20%;
     text-align: left;
     margin-bottom: 10px;
+}
+.Cardcontainer__body--filmview{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70%;
+    margin-left:10px;
+
 }

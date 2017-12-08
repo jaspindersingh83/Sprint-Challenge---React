@@ -1,13 +1,14 @@
 import React,{Component} from 'react'
 import './CardContainer.css'
+import FilmView from '../FilmView/FilmView'
 
 class CardContainer extends Component{
     constructor(props){
         super(props);
         this.state={
-            charData:props.chardata
+            charData:props.chardata,
         }
-        console.log(this.state)
+        // console.log(this.state)
     }
 
     render(){
@@ -32,13 +33,18 @@ class CardContainer extends Component{
                     <div className='Cardcontainer__bodyitem'>
                         <b>Skin Color : </b>{this.state.charData.skin_color}
                     </div>
-                    <div>
-                        
+                    <div className='Cardcontainer__bodyitem'>
+                        <b>Films : </b>
+                        <div className='Cardcontainer__body--filmview'>
+                            {this.state.charData.films.map(film =>
+                                <FilmView filmurl={film}/>
+                            )
+                            }
+                        </div>
                     </div>
+                    
                 </div>
-                
             </div>
-
         )
     }
 }
